@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import axios from "axios";
-import SessionContext from "./contexts/SessionContext";
+import SessionContext from "../contexts/SessionContext";
 import {
   Button,
   Modal,
@@ -12,7 +12,7 @@ import {
   Label,
   Input,
 } from "reactstrap";
-import { url } from "./App";
+import { url } from "../App";
 import { UncontrolledAlert } from "react";
 
 export default function Login({ buttonLabel, className }) {

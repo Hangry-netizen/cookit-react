@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { url } from "./App";
-import SessionContext from "./contexts/SessionContext";
+import { url } from "../App";
+import SessionContext from "../contexts/SessionContext";
 import Meal from "./Meal";
 
 export default function Meals() {

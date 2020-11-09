@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import SessionContext from "./contexts/SessionContext";
+import SessionContext from "../contexts/SessionContext";
 
 import { Navbar, Nav, NavLink } from "reactstrap";
 
@@ -27,12 +27,10 @@ export default function NavBar() {
           {loggedIn ? (
             <NavLink onClick={() => toggleLogIn()}>Logout</NavLink>
           ) : (
-            <NavLink onClick={() => toggleLoginModal()}>User Login</NavLink>
-          )}
-          {loggedIn ? (
+            <>
+              <NavLink onClick={() => toggleLoginModal()}>User Login</NavLink>
             <NavLink onClick={() => toggleSignUpModal()}>Sign Up</NavLink>
-          ) : (
-            ""
+            </>
           )}
         </Nav>
       </Navbar>

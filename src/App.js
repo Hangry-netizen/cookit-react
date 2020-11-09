@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import SessionContext from "./contexts/SessionContext";
-import Navbar from "./NavBar";
-import StartPage from "./StartPage";
-import Login from "./Login";
-import Meals from "./Meals";
-import SignUp from "./SignUp";
-import AdminLogin from "./AdminLogin";
-import AdminPage from "./AdminPage";
-import AdminSignUp from "./AdminSignUp";
-import AddMeal from "./AddMeal";
+import Navbar from "./components/NavBar";
+import StartPage from "./pages/StartPage";
+import Login from "./components/Login";
+import Meals from "./containers/Meals";
+import SignUp from "./components/SignUp";
+import AdminLogin from "./components/AdminLogin";
+import AdminPage from "./pages/AdminPage";
+import AdminSignUp from "./components/AdminSignUp";
+import AddMeal from "./components/AddMeal";
 
-export const url = "http://127.0.0.1:5000/api/v1";
+export const url = "https://cookit-cookit-cookit.herokuapp.com/api/v1";
 
 function App() {
   const [name, setName] = useState();
