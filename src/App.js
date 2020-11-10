@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 import SessionContext from "./contexts/SessionContext";
 import Navbar from "./components/NavBar";
 import StartPage from "./pages/StartPage";
@@ -9,6 +10,7 @@ import AdminLogin from "./components/AdminLogin";
 import AdminPage from "./pages/AdminPage";
 import AdminSignUp from "./components/AdminSignUp";
 import AddMeal from "./components/AddMeal";
+import FooterPage from "./pages/FooterPage";
 
 export const url = "https://cookit-cookit-cookit.herokuapp.com/api/v1";
 
@@ -48,57 +50,61 @@ function App() {
   const toggleShowAddMealModal = () => setShowAddMealModal(!showAddMealModal);
 
   return (
-    <SessionContext.Provider
-      value={{
-        name,
-        setName,
-        password,
-        setPassword,
-        email,
-        setEmail,
-        signUp,
-        setSignUp,
-        loggedIn,
-        setLoggedIn,
-        toggleLogIn,
-        toggleSignUp,
-        toggleSignUpModal,
-        showLoginModal,
-        showSignUpModal,
-        toggleLoginModal,
-        meals,
-        setMeals,
-        toggleStartPage,
-        toggleAdminModal,
-        showAdminModal,
-        toggleAdminLogin,
-        adminLoggedIn,
-        setAdminLoggedIn,
-        showAdminSignUpModal,
-        toggleAdminSignUpModal,
-        showAddMealModal,
-        toggleShowAddMealModal,
-        setIngredients,
-        prepTime,
-        cookware,
-        setPrepTime,
-        setCookware,
-        ingredients,
-        imgUrl,
-        setUrl,
-      }}
-    >
-      <Navbar />
-      {!loggedIn && !adminLoggedIn ? <StartPage /> : ""}
-      <SignUp />
-      <Login />
-      <AdminLogin />
-      <AdminSignUp />
-      <AddMeal />
+    <div className="main">
+      <SessionContext.Provider
+        value={{
+          name,
+          setName,
+          password,
+          setPassword,
+          email,
+          setEmail,
+          signUp,
+          setSignUp,
+          loggedIn,
+          setLoggedIn,
+          toggleLogIn,
+          toggleSignUp,
+          toggleSignUpModal,
+          showLoginModal,
+          showSignUpModal,
+          toggleLoginModal,
+          meals,
+          setMeals,
+          toggleStartPage,
+          toggleAdminModal,
+          showAdminModal,
+          toggleAdminLogin,
+          adminLoggedIn,
+          setAdminLoggedIn,
+          showAdminSignUpModal,
+          toggleAdminSignUpModal,
+          showAddMealModal,
+          toggleShowAddMealModal,
+          setIngredients,
+          prepTime,
+          cookware,
+          setPrepTime,
+          setCookware,
+          ingredients,
+          imgUrl,
+          setUrl,
+        }}
+      >
+        <Navbar />
+        {!loggedIn && !adminLoggedIn ? <StartPage /> : ""}
+        <SignUp />
+        <Login />
+        <AdminLogin />
+        <AdminSignUp />
+        <AddMeal />
 
-      {loggedIn ? <Meals /> : ""}
-      {adminLoggedIn ? <AdminPage /> : ""}
-    </SessionContext.Provider>
+        {loggedIn ? <Meals /> : ""}
+        {adminLoggedIn ? <AdminPage /> : ""}
+
+        <FooterPage />
+      </SessionContext.Provider>
+    </div>
   );
 }
 
