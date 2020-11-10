@@ -20,9 +20,9 @@ import { url } from "../App";
 const TestimonialsPage = (props) => {
   return (
     <div className="testimonialspage">
-      <Jumbotron fluid style={{ padding: "1%" }}>
-        <Container fluid>
-          <h1 className="display-3">Why our customers love us</h1>
+      <Jumbotron style={{ padding: "1%", marginBottom: "0" }}>
+        <Container style={{ textAlign: "center" }} fluid>
+          <h1 className="h1 display-3">Why our customers love us</h1>
 
           <div className="testimonial-cards">
             <div>
@@ -42,9 +42,9 @@ const TestimonialsPage = (props) => {
                   <CardText>
                     "Cookit is just amazing! A few months ago I started a new
                     company and just don't have any time to buy all the
-                    ingredients to cook. I feel blessed to find Cookit which
+                    ingredients to cook. I feel blessed to have found Cookit which
                     brought immense convenience to my life. Cookit is a
-                    life-save and the meals just delicious.""
+                    life-saver and the meals are just delicious.""
                   </CardText>
                 </CardBody>
               </Card>

@@ -4,8 +4,8 @@
   text-align: center !important;
 }
 
-h1 {
-  font-size: 100% !important;
+.h1 {
+  font-size: 180% !important;
 }
 
 .img {
@@ -32,4 +32,8 @@ h1 {
 
 .card {
   background-color: transparent !important;
+}
+
+.CardText {
+  font-size: 200px;
 }

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "./NavBar.css";
 import SessionContext from "../contexts/SessionContext";
 import { useHistory } from "react-router-dom";
 
@@ -8,9 +9,11 @@ import SignUp from "./SignUp";
 import AdminLogin from "./AdminLogin";
 import AdminSignUp from "./AdminSignUp";
 
+import logo from "../assets/logo.png";
+
 export default function NavBar() {
   let history = useHistory();
-  
+
   const {
     setLoggedIn,
     loggedIn,
@@ -22,16 +25,16 @@ export default function NavBar() {
   } = useContext(SessionContext);
 
   const handleAdminLogout = () => {
-    localStorage.removeItem('jwtAdmin')
-    setAdminLoggedIn(false)
-    history.push('/')
-  }
+    localStorage.removeItem("jwtAdmin");
+    setAdminLoggedIn(false);
+    history.push("/");
+  };
 
   const handleUserLogout = () => {
-    localStorage.removeItem('jwt')
-    setLoggedIn(false)
-    history.push('/')
-  }
+    localStorage.removeItem("jwt");
+    setLoggedIn(false);
+    history.push("/");
+  };
 
   return (
     <div>
@@ -39,20 +42,41 @@ export default function NavBar() {
       <SignUp />
       <AdminLogin />
       <AdminSignUp />
-      <Navbar color="light" light expand="md">
+      <Navbar
+        fixed="top"
+        style={{
+          borderBottom: "3px solid #555",
+          height: "9vh",
+          backgroundColor: "#555",
+          opacity: "0.8",
+          fontSize: "20%",
+        }}
+        expand="md"
+      >
+        <img style={{ height: "30px" }} src={logo} />
         {adminLoggedIn ? (
-          <NavLink onClick={handleAdminLogout}>Logout Admin</NavLink>
+          <NavLink className="inactive" onClick={handleAdminLogout}>
+            Logout Admin
+          </NavLink>
         ) : (
-          <NavLink onClick={toggleAdminModal}>Admin Login</NavLink>
+          <NavLink className="inactive" onClick={toggleAdminModal}>
+            Admin Login
+          </NavLink>
         )}
 
         <Nav className="ml-auto">
           {loggedIn ? (
-            <NavLink onClick={handleUserLogout}>Logout</NavLink>
+            <NavLink className="inactive" onClick={handleUserLogout}>
+              Logout
+            </NavLink>
           ) : (
             <>
-              <NavLink onClick={toggleLoginModal}>Login</NavLink>
-              <NavLink onClick={toggleSignUpModal}>Sign Up</NavLink>
+              <NavLink className="inactive" onClick={toggleLoginModal}>
+                Login
+              </NavLink>
+              <NavLink className="inactive" onClick={toggleSignUpModal}>
+                Sign Up
+              </NavLink>
             </>
           )}
         </Nav>

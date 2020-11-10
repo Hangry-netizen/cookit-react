@@ -14,30 +14,32 @@ import {
 export default function Meal({ meal }) {
   let history = useHistory();
 
-  const {
-    loggedIn
-  } = useContext(SessionContext);
+  const { loggedIn } = useContext(SessionContext);
 
   return (
-    <div style={{ width: "32%", padding: "2%" }}>
+    <div style={{ width: "33vw", padding: "2%" }}>
       <Card>
-        <CardImg top width="100%" src={meal.url} alt="Card image cap" />
+        <CardImg
+          style={{ height: "200px" }}
+          src={meal.url}
+          alt="Card image cap"
+        />
         <CardBody>
           <CardTitle tag="h5">{meal.name}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">
             Preparation time: {meal.prep_time}
           </CardSubtitle>
           <CardText>
-            Cookware required: 
+            Cookware required:
             {meal.cookware}
           </CardText>
-          {
-            loggedIn
-            ?
-            <Button onClick={() => history.push(`/meal/${meal.id}`)}>Order now</Button>
-            :
+          {loggedIn ? (
+            <Button onClick={() => history.push(`/meal/${meal.id}`)}>
+              Order now
+            </Button>
+          ) : (
             ""
-          }
+          )}
         </CardBody>
       </Card>
     </div>
