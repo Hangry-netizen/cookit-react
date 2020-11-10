@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import { Switch, Route } from "react-router-dom";
 
+=======
+import "./App.css";
+>>>>>>> origin/master
 import SessionContext from "./contexts/SessionContext";
 import Navbar from "./components/NavBar";
 import Login from "./components/Login";
@@ -10,7 +14,12 @@ import AdminLogin from "./components/AdminLogin";
 import AdminPage from "./pages/AdminPage";
 import AdminSignUp from "./components/AdminSignUp";
 import AddMeal from "./components/AddMeal";
+<<<<<<< HEAD
 import MealPage from "./pages/MealPage"
+=======
+import FooterPage from "./pages/FooterPage";
+import TestimonialsPage from "./pages/TestimonialsPage";
+>>>>>>> origin/master
 
 export const url = "https://cookit-cookit-cookit.herokuapp.com/api/v1";
 
@@ -48,53 +57,57 @@ function App() {
   const toggleShowAddMealModal = () => setShowAddMealModal(!showAddMealModal);
 
   return (
-    <SessionContext.Provider
-      value={{
-        name,
-        setName,
-        password,
-        setPassword,
-        email,
-        setEmail,
-        signUp,
-        setSignUp,
-        loggedIn,
-        setLoggedIn,
-        toggleLogIn,
-        toggleSignUp,
-        toggleSignUpModal,
-        showLoginModal,
-        showSignUpModal,
-        toggleLoginModal,
-        meals,
-        setMeals,
-        toggleAdminModal,
-        showAdminModal,
-        toggleAdminLogin,
-        adminLoggedIn,
-        setAdminLoggedIn,
-        showAdminSignUpModal,
-        toggleAdminSignUpModal,
-        showAddMealModal,
-        toggleShowAddMealModal,
-        setIngredients,
-        prepTime,
-        cookware,
-        setPrepTime,
-        setCookware,
-        ingredients,
-        imgUrl,
-        setUrl,
-      }}
-    >
-      <Navbar />
-
-      <Switch>
-        <Route exact path = "/" render={() => <HomePage />} />
-        <Route path = "/meal/:id" render={() => <MealPage/>} />
-        <Route path = "/admin" render={() => <AdminPage/>} />
-      </Switch>
-    </SessionContext.Provider>
+    <div className="main">
+      <SessionContext.Provider
+        value={{
+          name,
+          setName,
+          password,
+          setPassword,
+          email,
+          setEmail,
+          signUp,
+          setSignUp,
+          loggedIn,
+          setLoggedIn,
+          toggleLogIn,
+          toggleSignUp,
+          toggleSignUpModal,
+          showLoginModal,
+          showSignUpModal,
+          toggleLoginModal,
+          meals,
+          setMeals,
+          toggleAdminModal,
+          showAdminModal,
+          toggleAdminLogin,
+          adminLoggedIn,
+          setAdminLoggedIn,
+          showAdminSignUpModal,
+          toggleAdminSignUpModal,
+          showAddMealModal,
+          toggleShowAddMealModal,
+          setIngredients,
+          prepTime,
+          cookware,
+          setPrepTime,
+          setCookware,
+          ingredients,
+          imgUrl,
+          setUrl,
+        }}
+      >
+        <Navbar />
+  
+        <Switch>
+          <Route exact path = "/" render={() => <HomePage />} />
+          <Route path = "/meal/:id" render={() => <MealPage/>} />
+          <Route path = "/admin" render={() => <AdminPage/>} />
+          <Route path = "/testimonials" render={() => <TestimonialsPage />>} />
+          <Route path = "/footer" render={() => <FooterPage />} />
+        </Switch>
+      </SessionContext.Provider>
+    </div>
   );
 }
 
