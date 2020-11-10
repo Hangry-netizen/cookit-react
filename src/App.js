@@ -11,6 +11,7 @@ import AdminPage from "./pages/AdminPage";
 import AdminSignUp from "./components/AdminSignUp";
 import AddMeal from "./components/AddMeal";
 import FooterPage from "./pages/FooterPage";
+import TestimonialsPage from "./pages/TestimonialsPage";
 
 export const url = "https://cookit-cookit-cookit.herokuapp.com/api/v1";
 
@@ -101,7 +102,7 @@ function App() {
 
         {loggedIn ? <Meals /> : ""}
         {adminLoggedIn ? <AdminPage /> : ""}
-
+        <TestimonialsPage />
         <FooterPage />
       </SessionContext.Provider>
     </div>
