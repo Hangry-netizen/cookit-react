@@ -15,7 +15,7 @@ const FooterPage = () => {
           <MDBCol md="6">
             <ul>
               <li className="list-unstyled">
-                <a href="#!">
+                <a className="a" href="#!">
                   <span
                     className="iconify-inline"
                     data-icon="ion-social-pinterest"
@@ -23,7 +23,7 @@ const FooterPage = () => {
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">
+                <a className="a" href="#!">
                   <span
                     className="iconify-inline"
                     data-icon="ion-social-facebook"
@@ -31,7 +31,7 @@ const FooterPage = () => {
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">
+                <a className="a" href="#!">
                   <span
                     className="iconify-inline"
                     data-icon="ion-social-twitter"
@@ -39,7 +39,7 @@ const FooterPage = () => {
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">
+                <a className="a" href="#!">
                   <span
                     className="iconify-inline"
                     data-icon="ion-social-instagram"
@@ -49,12 +49,12 @@ const FooterPage = () => {
             </ul>
             <ul>
               <li className="list-unstyled">
-                <a href="#!">
+                <a className="a" href="#!">
                   <p>About Us</p>
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">
+                <a className="a" href="#!">
                   <p>iOS</p>
                 </a>
               </li>
@@ -64,7 +64,7 @@ const FooterPage = () => {
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">
+                <a className="a" href="#!">
                   <p>Blog</p>
                 </a>
               </li>

@@ -3,6 +3,9 @@ import axios from "axios";
 import { url } from "../App";
 import SessionContext from "../contexts/SessionContext";
 import Meal from "../containers/Meal";
+import HeaderPage from "./HeaderPage";
+import FooterPage from "./FooterPage";
+import TestimonialsPage from "./TestimonialsPage";
 
 export default function HomePage() {
   const { meals, setMeals } = useContext(SessionContext);
@@ -23,22 +26,27 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div
-      style={{
-        margin: "auto",
-      }}
-    >
+    <div style={{ height: "100vh", width: "100vw" }}>
+      <HeaderPage />
       <div
         style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-around",
+          margin: "auto",
         }}
       >
-        {meals.map((meal) => {
-          return <Meal meal={meal} />;
-        })}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+          }}
+        >
+          {meals.map((meal) => {
+            return <Meal meal={meal} />;
+          })}
+        </div>
       </div>
+      <TestimonialsPage />
+      <FooterPage />
     </div>
   );
 }

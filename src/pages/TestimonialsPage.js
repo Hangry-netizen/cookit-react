@@ -22,7 +22,7 @@ const TestimonialsPage = (props) => {
     <div className="testimonialspage">
       <Jumbotron fluid style={{ padding: "1%" }}>
         <Container fluid>
-          <h1 className="display-3">Why our customers love us</h1>
+          <h1 className="h1 display-3">Why our customers love us</h1>
 
           <div className="testimonial-cards">
             <div>
