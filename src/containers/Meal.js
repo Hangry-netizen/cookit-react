@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
+import SessionContext from "../contexts/SessionContext";
 import {
   Card,
   CardImg,
@@ -10,8 +12,14 @@ import {
 } from "reactstrap";
 
 export default function Meal({ meal }) {
+  let history = useHistory();
+
+  const {
+    loggedIn
+  } = useContext(SessionContext);
+
   return (
-    <div style={{ width: "30%", padding: "2%" }}>
+    <div style={{ width: "32%", padding: "2%" }}>
       <Card>
         <CardImg top width="100%" src={meal.url} alt="Card image cap" />
         <CardBody>
@@ -20,10 +28,16 @@ export default function Meal({ meal }) {
             Preparation time: {meal.prep_time}
           </CardSubtitle>
           <CardText>
-            Cookware required:
+            Cookware required: 
             {meal.cookware}
           </CardText>
-          <Button>Order now</Button>
+          {
+            loggedIn
+            ?
+            <Button onClick={() => history.push(`/meal/${meal.id}`)}>Order now</Button>
+            :
+            ""
+          }
         </CardBody>
       </Card>
     </div>

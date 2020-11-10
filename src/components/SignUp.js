@@ -14,7 +14,7 @@ import {
 } from "reactstrap";
 import { url } from "../App";
 
-export default function SignUp({ buttonLabel, className }) {
+export default function SignUp({ className }) {
   const {
     name,
     setName,
@@ -24,7 +24,6 @@ export default function SignUp({ buttonLabel, className }) {
     setEmail,
     showSignUpModal,
     toggleSignUpModal,
-    toggleStartPage,
     setLoggedIn,
     setAdminLoggedIn,
   } = useContext(SessionContext);
@@ -45,7 +44,6 @@ export default function SignUp({ buttonLabel, className }) {
         console.log(response.data.status);
         if (response.data.status === "success") {
           toggleSignUpModal();
-          toggleStartPage();
           setLoggedIn(true);
           setAdminLoggedIn(false);
         }
