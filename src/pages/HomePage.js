@@ -2,9 +2,9 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { url } from "../App";
 import SessionContext from "../contexts/SessionContext";
-import Meal from "./Meal";
+import Meal from "../containers/Meal";
 
-export default function Meals() {
+export default function HomePage() {
   const { meals, setMeals } = useContext(SessionContext);
 
   useEffect(() => {

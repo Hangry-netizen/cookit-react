@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import axios from "axios";
 import SessionContext from "../contexts/SessionContext";
+import { useHistory } from "react-router-dom";
 import {
   Button,
   Modal,
@@ -21,12 +22,14 @@ export default function Login({ buttonLabel, className }) {
     setName,
     password,
     setPassword,
-    setLoggedIn,
+    setAdminLoggedIn,
     showAdminModal,
     toggleAdminModal,
     toggleAdminLogin,
   } = useContext(SessionContext);
 
+  let history = useHistory()
+  
   const handleSubmit = (event) => {
     console.log(`Name: ${name}, Password: ${password}`);
     axios({
@@ -39,12 +42,13 @@ export default function Login({ buttonLabel, className }) {
     })
       .then((response) => {
         console.log(response.data);
-        localStorage.setItem("jwt", response.data.auth_token);
         console.log(response.data.Error);
         if (response.data.Error !== "Invalid credentials") {
+          localStorage.setItem("jwt", response.data.token);
           toggleAdminModal();
           toggleAdminLogin();
-          setLoggedIn(false);
+          setAdminLoggedIn(true);
+          history.push('/admin')
         }
       })
       .catch((error) => {

@@ -31,12 +31,11 @@ export default function Login({ buttonLabel, className }) {
     setLoggedIn,
     toggle,
     toggleLogIn,
-    toggleStartPage,
     toggleLoginModal,
     showLoginModal,
     setAdminLoggedIn,
   } = useContext(SessionContext);
-
+ 
   //   let history = useHistory();
 
   const handleSubmit = (event) => {
@@ -55,7 +54,6 @@ export default function Login({ buttonLabel, className }) {
         console.log(response.data.Error);
         if (response.data.Error !== "Invalid credentials") {
           toggleLoginModal();
-          toggleStartPage();
           toggleLogIn();
           setAdminLoggedIn(false);
         }

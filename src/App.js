@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { Switch, Route } from "react-router-dom";
+
 import SessionContext from "./contexts/SessionContext";
 import Navbar from "./components/NavBar";
-import StartPage from "./pages/StartPage";
 import Login from "./components/Login";
-import Meals from "./containers/Meals";
+import HomePage from "./pages/HomePage";
 import SignUp from "./components/SignUp";
 import AdminLogin from "./components/AdminLogin";
 import AdminPage from "./pages/AdminPage";
 import AdminSignUp from "./components/AdminSignUp";
 import AddMeal from "./components/AddMeal";
+import MealPage from "./pages/MealPage"
 
 export const url = "https://cookit-cookit-cookit.herokuapp.com/api/v1";
 
@@ -21,7 +23,6 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [adminLoggedIn, setAdminLoggedIn] = useState(false);
   const [showAdminSignUpModal, setShowAdminSignUpModal] = useState(false);
-  const [showStartPage, setShowStartPage] = useState(false);
   const [meals, setMeals] = useState([]);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
@@ -31,12 +32,11 @@ function App() {
   const [prepTime, setPrepTime] = useState(false);
   const [cookware, setCookware] = useState(false);
 
-  //Funtions
+  //Functions
   const toggleLoginModal = () => setShowLoginModal(!showLoginModal);
   const toggleSignUpModal = () => setShowSignUpModal(!showSignUpModal);
   const toggleLogIn = () => setLoggedIn(!loggedIn);
   const toggleSignUp = () => setSignUp(!signUp);
-  const toggleStartPage = () => setShowStartPage(!showStartPage);
   const toggleAdminModal = () => {
     setShowAdminModal(!showAdminModal);
     console.log(showAdminModal);
@@ -68,7 +68,6 @@ function App() {
         toggleLoginModal,
         meals,
         setMeals,
-        toggleStartPage,
         toggleAdminModal,
         showAdminModal,
         toggleAdminLogin,
@@ -89,15 +88,12 @@ function App() {
       }}
     >
       <Navbar />
-      {!loggedIn && !adminLoggedIn ? <StartPage /> : ""}
-      <SignUp />
-      <Login />
-      <AdminLogin />
-      <AdminSignUp />
-      <AddMeal />
 
-      {loggedIn ? <Meals /> : ""}
-      {adminLoggedIn ? <AdminPage /> : ""}
+      <Switch>
+        <Route exact path = "/" render={() => <HomePage />} />
+        <Route path = "/meal/:id" render={() => <MealPage/>} />
+        <Route path = "/admin" render={() => <AdminPage/>} />
+      </Switch>
     </SessionContext.Provider>
   );
 }

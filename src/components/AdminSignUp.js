@@ -29,7 +29,6 @@ export default function AdminSignUp({ buttonLabel, className }) {
     toggleSignUp,
     showSignUpModal,
     toggleSignUpModal,
-    toggleStartPage,
     toggleLogIn,
     setLoggedIn,
     setAdminLoggedIn,
