@@ -31,8 +31,12 @@ export default function HomePage() {
       <div
         style={{
           margin: "auto",
+          textAlign: "center",
         }}
       >
+        <h2 style={{ marginTop: "2%" }}>
+          Pick one of of our delicious and healthy meals
+        </h2>
         <div
           style={{
             display: "flex",

@@ -28,6 +28,7 @@ export default function AdminPage() {
         </Button>
         <AdminSignUp />
         <Button
+          style={{ marginBottom: "4%" }}
           onClick={() => toggleAdminSignUpModal()}
           className="mt-1"
           color="primary"

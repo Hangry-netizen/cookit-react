@@ -17,7 +17,7 @@ export default function Meal({ meal }) {
   const { loggedIn } = useContext(SessionContext);
 
   return (
-    <div style={{ width: "32%", padding: "2%" }}>
+    <div style={{ width: "33vw", padding: "2%" }}>
       <Card>
         <CardImg
           style={{ height: "200px" }}

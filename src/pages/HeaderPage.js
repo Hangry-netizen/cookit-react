@@ -9,11 +9,11 @@ export default function HeaderPage() {
       <Jumbotron>
         <img style={{ height: "45vh" }} src={logo} />
         <h1 style={{ fontSize: "150%" }}>
-          Say hello to healthy meals! And become you own private chef!
+          Say hello to healthy meals. Become your own chef.
         </h1>
 
         <p className="lead">
-          <Button style={{ backgroundColor: "#ff914d" }}>Learn More</Button>
+          <Button style={{ backgroundColor: "#ff914d" }}>How it works</Button>
         </p>
       </Jumbotron>
     </div>
