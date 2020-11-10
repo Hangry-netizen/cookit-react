@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { Button } from "reactstrap";
+import AddMeal from "../components/AddMeal";
+import AdminSignUp from "../components/AdminSignUp";
 import SessionContext from "../contexts/SessionContext";
 import HomePage from "../pages/HomePage";
 
@@ -16,6 +18,7 @@ export default function AdminPage() {
         <img src={cookitLogo} />
       </div>
       <div className="btn-group-vertical">
+        <AddMeal />
         <Button
           onClick={() => toggleShowAddMealModal()}
           className="mt-1"
@@ -23,6 +26,7 @@ export default function AdminPage() {
         >
           Add New Meal
         </Button>
+        <AdminSignUp />
         <Button
           onClick={() => toggleAdminSignUpModal()}
           className="mt-1"

@@ -22,7 +22,7 @@ export default function NavBar() {
   } = useContext(SessionContext);
 
   const handleAdminLogout = () => {
-    localStorage.removeItem('jwt')
+    localStorage.removeItem('jwtAdmin')
     setAdminLoggedIn(false)
     history.push('/')
   }

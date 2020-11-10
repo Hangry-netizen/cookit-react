@@ -23,8 +23,8 @@ function App() {
   const [email, setEmail] = useState();
   const [imgUrl, setUrl] = useState();
   const [signUp, setSignUp] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [adminLoggedIn, setAdminLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(localStorage.jwt);
+  const [adminLoggedIn, setAdminLoggedIn] = useState(localStorage.jwtAdmin);
   const [showAdminSignUpModal, setShowAdminSignUpModal] = useState(false);
   const [meals, setMeals] = useState([]);
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -40,14 +40,9 @@ function App() {
   const toggleSignUpModal = () => setShowSignUpModal(!showSignUpModal);
   const toggleLogIn = () => setLoggedIn(!loggedIn);
   const toggleSignUp = () => setSignUp(!signUp);
-  const toggleAdminModal = () => {
-    setShowAdminModal(!showAdminModal);
-    console.log(showAdminModal);
-  };
+  const toggleAdminModal = () => setShowAdminModal(!showAdminModal);
   const toggleAdminLogin = () => setAdminLoggedIn(!adminLoggedIn);
-  const toggleAdminSignUpModal = () =>
-    setShowAdminSignUpModal(!showAdminSignUpModal);
-
+  const toggleAdminSignUpModal = () => setShowAdminSignUpModal(!showAdminSignUpModal);
   const toggleShowAddMealModal = () => setShowAddMealModal(!showAddMealModal);
 
   return (

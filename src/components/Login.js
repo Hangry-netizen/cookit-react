@@ -11,6 +11,7 @@ import {
   FormGroup,
   Label,
   Input,
+  Alert
 } from "reactstrap";
 import { url } from "../App";
 import { UncontrolledAlert } from "react";
@@ -23,17 +24,10 @@ export default function Login({ buttonLabel, className }) {
     setName,
     password,
     setPassword,
-    modal,
-    setModal,
-    signUp,
-    setSignUp,
-    loggedIn,
-    setLoggedIn,
-    toggle,
     toggleLogIn,
     toggleLoginModal,
     showLoginModal,
-    setAdminLoggedIn,
+    setLoggedIn
   } = useContext(SessionContext);
  
   //   let history = useHistory();
@@ -55,7 +49,6 @@ export default function Login({ buttonLabel, className }) {
         if (response.data.Error !== "Invalid credentials") {
           toggleLoginModal();
           toggleLogIn();
-          setAdminLoggedIn(false);
         }
       })
       .catch((error) => {

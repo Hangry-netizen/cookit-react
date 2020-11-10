@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import SessionContext from "../contexts/SessionContext";
 import {
   Card,
   CardImg,
@@ -12,6 +13,11 @@ import {
 
 export default function Meal({ meal }) {
   let history = useHistory();
+
+  const {
+    loggedIn
+  } = useContext(SessionContext);
+
   return (
     <div style={{ width: "32%", padding: "2%" }}>
       <Card>
@@ -25,7 +31,13 @@ export default function Meal({ meal }) {
             Cookware required: 
             {meal.cookware}
           </CardText>
-          <Button onClick={() => history.push(`/meal/${meal.id}`)}>Order now</Button>
+          {
+            loggedIn
+            ?
+            <Button onClick={() => history.push(`/meal/${meal.id}`)}>Order now</Button>
+            :
+            ""
+          }
         </CardBody>
       </Card>
     </div>
