@@ -138,7 +138,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
       <Row>
         {/* TIP always disable your submit button while processing payments */}
         <SubmitButton disabled={isProcessing || !stripe}>
-          {isProcessing ? "Processing..." : `Pay $${price}`}
+          {isProcessing ? "Processing..." : `Pay MYR ${price}`}
         </SubmitButton>
       </Row>
     </form>
