@@ -6,6 +6,7 @@ import Meal from "../containers/Meal";
 import HeaderPage from "./HeaderPage";
 import FooterPage from "./FooterPage";
 import TestimonialsPage from "./TestimonialsPage";
+import IntroductionPage from "../pages/IntroductionPage";
 
 export default function HomePage() {
   const { meals, setMeals } = useContext(SessionContext);
@@ -28,6 +29,8 @@ export default function HomePage() {
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
       <HeaderPage />
+      <IntroductionPage />
+      <TestimonialsPage />
       <div
         style={{
           margin: "auto",
@@ -49,7 +52,7 @@ export default function HomePage() {
           })}
         </div>
       </div>
-      <TestimonialsPage />
+
       <FooterPage />
     </div>
   );

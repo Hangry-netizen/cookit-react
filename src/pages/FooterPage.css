@@ -1,9 +1,7 @@
 .footer {
-  
   color: #888;
   margin: 0;
   padding: 0;
-  
 }
 
 .MDBfooter {
@@ -33,7 +31,4 @@ ul {
   margin-right: 80%;
 }
 
-p {
-  font-size: 30%;
-  color: #888;
-}
+
