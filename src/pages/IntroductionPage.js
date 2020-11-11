@@ -3,7 +3,14 @@ import logo from "../assets/logo.png";
 
 export default function IntroductionPage() {
   return (
-    <div style={{ textAlign: "center", paddingTop: "3%", height: "80vh" }}>
+    <div
+      style={{
+        textAlign: "center",
+        paddingTop: "3%",
+        height: "100vh",
+        backgroundColor: "#D8D8D8",
+      }}
+    >
       <div
         style={{
           width: "50vw",
