@@ -38,7 +38,7 @@ export default function HomePage() {
         }}
       >
         <h2 style={{ marginTop: "2%" }}>
-          Pick one of of our delicious and healthy meals
+          Pick one of our delicious and healthy meals
         </h2>
         <div
           style={{
