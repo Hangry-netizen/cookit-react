@@ -16,7 +16,10 @@ export default function HeaderPage() {
           <Button href="#howItWorks" style={{ backgroundColor: "#ff914d" }}>
             How it works
           </Button>
-          <Button href="#meals" style={{ backgroundColor: "#ff914d" }}>
+          <Button
+            href="#meals"
+            style={{ backgroundColor: "#ff914d", marginLeft: "1%" }}
+          >
             Start Cooking
           </Button>
         </p>

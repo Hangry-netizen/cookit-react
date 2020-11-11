@@ -71,7 +71,7 @@ const FooterPage = () => {
         </ul>
 
         <div style={{ textAlign: "center", backgroundColor: "#333" }}>
-          <p>Copyright 2020 Cookit</p>
+          <p>&#169; Copyright 2020 Cookit</p>
         </div>
       </div>
     </div>
